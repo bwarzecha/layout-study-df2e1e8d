@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>90 Hull - Den, Mudroom and Powder Room 3D Study</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b7784'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='32' font-weight='700' fill='white'%3E90%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=86">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">90 HULL ST - CONCEPTUAL STUDY</p>
+      <h1>Foyer, mudroom and powder room - 3D perspective study</h1>
+    </div>
+    <div class="header-actions">
+      <button id="helpButton" class="ghost-button">How to use</button>
+      <button id="screenshotButton" class="primary-button">Save current view</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar">
+      <section>
+        <div class="section-heading">
+          <span>1</span>
+          <div>
+            <h2>Select a layout strategy</h2>
+            <p>Options 5 through 8 remove the den-to-foyer wall to a ceiling beam, then test different bathroom and mudroom arrangements.</p>
+          </div>
+        </div>
+        <div id="optionList" class="option-list"></div>
+      </section>
+
+      <section class="control-section">
+        <div class="section-heading compact">
+          <span>2</span>
+          <div>
+            <h2>Choose the kitchen wall</h2>
+          </div>
+        </div>
+        <div class="button-grid design-grid">
+          <button data-kitchen-mode="existing">Existing wall</button>
+          <button data-kitchen-mode="open">Open wall</button>
+        </div>
+        <p class="control-note">Independent of the selected bathroom and mudroom option.</p>
+        <label id="kitchenBeamRow" class="toggle-row kitchen-feature-row">
+          <span><strong>Visible dropped beam</strong><small>Turn off to test a flush/concealed beam or nonbearing-wall appearance</small></span>
+          <input id="kitchenBeamToggle" type="checkbox" checked>
+          <i></i>
+        </label>
+        <label id="kitchenPostRow" class="toggle-row kitchen-feature-row">
+          <span><strong>Basement-side post</strong><small>Conceptual support at the screened basement entrance</small></span>
+          <input id="kitchenPostToggle" type="checkbox" checked>
+          <i></i>
+        </label>
+        <label class="toggle-row kitchen-feature-row">
+          <span><strong>Breakfast table and chairs</strong><small>Remove these when evaluating an island</small></span>
+          <input id="kitchenTableToggle" type="checkbox" checked>
+          <i></i>
+        </label>
+        <label id="kitchenIslandRow" class="toggle-row kitchen-feature-row">
+          <span><strong>Kitchen island</strong><small>Conceptual 3'6" x 5'6" cabinet and countertop</small></span>
+          <input id="kitchenIslandToggle" type="checkbox">
+          <i></i>
+        </label>
+        <div class="button-grid island-position-grid">
+          <button data-island-position="center">Island centered</button>
+          <button data-island-position="bay">Toward bay</button>
+        </div>
+        <div class="button-grid island-orientation-grid">
+          <button data-island-orientation="vertical">North-south</button>
+          <button data-island-orientation="horizontal">East-west</button>
+        </div>
+        <p id="islandClearanceNote" class="control-note clearance-note" hidden></p>
+        <p id="kitchenFurnitureWarning" class="control-note warning-note" hidden>Table and island are shown together and overlap. Hide the table for the intended island circulation study.</p>
+        <p class="control-note">Beam and post visibility are visual tests only. Hiding them does not establish that they are structurally unnecessary.</p>
+      </section>
+
+      <section class="control-section">
+        <div class="section-heading compact">
+          <span>3</span>
+          <div>
+            <h2>Choose a viewpoint</h2>
+          </div>
+        </div>
+        <div class="button-grid camera-grid">
+          <button data-camera="frontdoor">From front door</button>
+          <button data-camera="away">Looking away from den</button>
+          <button data-camera="foyer">Foyer center</button>
+          <button data-camera="threshold">At den opening</button>
+          <button data-camera="living">Living-room context</button>
+          <button data-camera="den">Inside den</button>
+          <button data-camera="window">From window</button>
+          <button data-camera="kitchen">Kitchen work nook</button>
+          <button data-camera="dining">Dining-to-kitchen</button>
+          <button data-camera="island">Kitchen island</button>
+          <button data-camera="kitchenplan">Kitchen top-down</button>
+          <button data-camera="breakfast">Breakfast bay</button>
+          <button data-camera="patio">Dining patio doors</button>
+          <button data-camera="overhead">Bird's-eye</button>
+        </div>
+      </section>
+
+      <section class="control-section">
+        <div class="section-heading compact">
+          <span>4</span>
+          <div><h2>Model layers</h2></div>
+        </div>
+        <label class="toggle-row">
+          <span><strong>Bathroom cutaway</strong><small>See the approximate toilet and vanity</small></span>
+          <input id="cutawayToggle" type="checkbox">
+          <i></i>
+        </label>
+        <label id="bathroomDoorRow" class="toggle-row">
+          <span><strong>Bathroom door closed</strong><small>Block the view through the north-bath doorway</small></span>
+          <input id="bathroomDoorToggle" type="checkbox">
+          <i></i>
+        </label>
+        <label class="toggle-row">
+          <span><strong>Floor-plan underlay</strong><small>Show the calibrated marketing plan beneath the 3D model</small></span>
+          <input id="planToggle" type="checkbox" checked>
+          <i></i>
+        </label>
+        <label class="toggle-row">
+          <span><strong>Mudroom built-ins</strong><small>Show the entrance bench and full-height coat closet</small></span>
+          <input id="mudroomToggle" type="checkbox" checked>
+          <i></i>
+        </label>
+        <label class="toggle-row">
+          <span><strong>Printed dimensions</strong><small>Show scaled dimension lines for the active option</small></span>
+          <input id="dimensionToggle" type="checkbox">
+          <i></i>
+        </label>
+        <label class="toggle-row">
+          <span><strong>Existing door ghosts</strong><small>Show the two den side doors that will be closed</small></span>
+          <input id="ghostToggle" type="checkbox">
+          <i></i>
+        </label>
+      </section>
+
+      <section id="optionSummary" class="summary-card"></section>
+
+      <section class="assumptions">
+        <h3>Important limitations</h3>
+        <ul>
+          <li>The complete first-floor interior is calibrated to the marketing plan and its labeled room sizes, with an assumed 9' ceiling.</li>
+          <li>All principal wall runs, exterior windows, door openings, stairs and the kitchen footprint follow the plan; fine trim and construction thicknesses remain estimated.</li>
+          <li>The open kitchen scheme removes the dining-wall cabinetry. Its optional 3'6" x 5'6" island is a circulation study, not a finished cabinet or appliance plan.</li>
+          <li>The kitchen beam and post toggles show alternative appearances only. A structural engineer must determine whether the wall is bearing and design any required framing, bearing, foundations and connections.</li>
+          <li>Bench, closet and bathroom fixtures are conceptual scaled objects, not selected products.</li>
+          <li>Options 5 and 6 place a side-wall powder room; Options 7 and 8 share a full-width north-end half bath but use different mudroom storage layouts.</li>
+          <li>This is a perspective and massing tool, not measured CAD or a construction drawing.</li>
+        </ul>
+      </section>
+    </aside>
+
+    <section class="viewer-column">
+      <div id="viewer" class="viewer" aria-label="Interactive 3D room model">
+        <canvas id="sceneCanvas"></canvas>
+        <div class="viewer-badge">
+          <strong id="viewerOptionName">Option 5</strong>
+          <span id="viewerOptionFootprint">East wall - wide den opening</span>
+        </div>
+        <div class="window-callout">
+          <span></span>
+          <span id="windowCalloutText">North window preserved</span>
+        </div>
+        <div class="viewcube-panel" aria-label="ViewCube orientation control">
+          <canvas id="viewCubeCanvas" width="104" height="104" title="Drag to orbit or click a face"></canvas>
+          <button id="viewCubeHome" type="button" title="Return to home view"><span aria-hidden="true">⌂</span> Home</button>
+        </div>
+        <div class="orbit-hint">Trackpad · two-finger pan · Shift-two-finger orbit · pinch zoom · click-drag orbit</div>
+        <div id="loadingMessage" class="loading-message">Building room model...</div>
+      </div>
+
+      <div class="lower-deck">
+        <section class="dimensions-panel">
+          <p class="eyebrow">ACTIVE MASSING</p>
+          <div id="dimensionGrid" class="dimension-grid"></div>
+          <p class="dimension-note">Dimensions are inferred from the marketing plan and must be field-verified.</p>
+        </section>
+
+        <section class="photo-panel">
+          <div class="photo-heading">
+            <div>
+              <p class="eyebrow">EXISTING ROOM REFERENCE</p>
+              <strong id="photoCaption">Existing foyer looking away from the den</strong>
+            </div>
+            <div class="photo-tabs">
+              <button class="active" data-photo="foyerAway">Foyer away</button>
+              <button data-photo="denToFoyer">Den to foyer</button>
+              <button data-photo="livingScale">Living scale</button>
+              <button data-photo="window">Den window</button>
+              <button data-photo="plan">Plan</button>
+            </div>
+          </div>
+          <button id="photoExpand" class="photo-frame" aria-label="Expand reference photograph">
+            <img id="referencePhoto" src="assets/Background/listing/photos/12_Foyer-Entrance.jpg" alt="Existing foyer looking away from the den">
+          </button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="helpDialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Close">×</button>
+      <p class="eyebrow">USING THE MODEL</p>
+      <h2>Compare massing, not finishes</h2>
+      <ol>
+        <li>Switch among Options 5 through 8 to compare the two side-wall powder rooms and two north-bath mudroom layouts.</li>
+        <li>Start with <strong>From front door</strong> to judge the new opening, then use <strong>Looking away from den</strong> to compare the modeled foyer with Photo 12.</li>
+        <li>Use <strong>At den opening</strong> and <strong>Inside den</strong> to judge the future mudroom and window relationship.</li>
+        <li>Trackpad controls: two-finger swipe to pan, Shift-two-finger swipe to orbit, pinch to zoom, and click-drag to orbit.</li>
+        <li>Mouse controls remain Fusion-style: middle-drag to pan and Shift-middle-drag to orbit.</li>
+        <li>Drag or click the ViewCube at the right edge, or click its Home button to return immediately to the main front-door view.</li>
+        <li>Turn on <strong>Bathroom cutaway</strong> to understand the fixture orientation, or close the bathroom door to block the view through to the retained window.</li>
+        <li>Use <strong>Save current view</strong> to download a PNG for discussion.</li>
+      </ol>
+      <p>The dark-gray translucent panels mark the existing side doors when the ghost layer is enabled. They are closed in every proposed option.</p>
+    </form>
+  </dialog>
+
+  <dialog id="photoDialog" class="photo-dialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Close">×</button>
+      <img id="expandedPhoto" alt="Expanded existing room reference">
+    </form>
+  </dialog>
+
+  <script>
+    window.__visualizerReady = false;
+    window.addEventListener('error', function (event) {
+      var message = event.message || ('Could not load ' + ((event.target && (event.target.src || event.target.href)) || 'a required asset'));
+      var source = event.filename ? (' - ' + event.filename.split('/').pop() + ':' + (event.lineno || '?') + ':' + (event.colno || '?')) : '';
+      var panel = document.getElementById('loadingMessage');
+      if (panel && !window.__visualizerReady) panel.textContent = 'Model failed to load: ' + message + source;
+    }, true);
+    window.setTimeout(function () {
+      var panel = document.getElementById('loadingMessage');
+      if (panel && !window.__visualizerReady) panel.textContent = 'Model loading timed out. Reload this page to retry.';
+    }, 10000);
+  </script>
+  <script defer src="app.bundle.js?v=86"></script>
+</body>
+</html>
