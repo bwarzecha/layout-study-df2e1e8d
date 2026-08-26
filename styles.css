@@ -103,6 +103,10 @@ button { border: 0; }
 }
 .option-button:hover { border-color: #93bdc4; transform: translateY(-1px); }
 .option-button.active { border-color: var(--teal); background: var(--teal-soft); box-shadow: inset 3px 0 0 var(--teal); }
+.option-button.rejected { border-color: #d8b0aa; background: #fff8f7; }
+.option-button.rejected.active { border-color: #a84439; background: #fae9e7; box-shadow: inset 3px 0 0 #a84439; }
+.option-button.rejected .option-number,
+.option-button.rejected.active .option-number { color: #fff; background: #a84439; }
 .option-number { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; color: var(--teal); background: #edf5f6; font-weight: 850; }
 .option-button.active .option-number { color: #fff; background: var(--teal); }
 .option-copy strong { display: block; font-size: 13px; line-height: 1.15; }
@@ -165,6 +169,8 @@ button { border: 0; }
   border-radius: 8px;
 }
 .summary-card .status { display: inline-block; margin-bottom: 6px; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.summary-card.rejected { background: #fff3f1; border-left-color: #a84439; }
+.summary-card.rejected .status { color: #a84439; }
 .summary-card h3 { margin: 0 0 6px; font-size: 15px; }
 .summary-card p { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.42; }
 
